@@ -17,7 +17,7 @@ class Setting
 
     static function create()
     {
-        if(!static::$setting) {
+        if(!static::$setting) {      // check the obj already build or not
             static::$setting = new static;
         }
 
@@ -32,6 +32,6 @@ print_r ($setting1);
 
 echo "</br>";
 
-$setting2 = Setting::create();
-echo $setting2->dark;
+$setting2 = Setting::create();      // setting2 is not new obj
+echo $setting2->dark;               // its dark value is one the same as $setting1->dark
 print_r($setting2);
